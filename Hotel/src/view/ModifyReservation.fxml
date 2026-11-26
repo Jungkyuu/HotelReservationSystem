@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ModifyReservationController"
+            prefWidth="760" prefHeight="520">
+    <top>
+        <Label text="✏️ Modify Reservation" style="-fx-font-size: 18px;">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+        </Label>
+    </top>
+
+    <center>
+        <GridPane hgap="12" vgap="10">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="140"/>
+                <ColumnConstraints halignment="LEFT"  prefWidth="220"/>
+                <ColumnConstraints halignment="RIGHT" prefWidth="140"/>
+                <ColumnConstraints halignment="LEFT"  prefWidth="220"/>
+            </columnConstraints>
+
+            <!-- Row 0 -->
+            <Label text="Reservation ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="reservationIdField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Guest ID:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="guestIdField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <!-- Row 1 (DatePickers) -->
+            <Label text="Check-in:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="checkInPicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Check-out:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <DatePicker fx:id="checkOutPicker" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+            <!-- Row 2 -->
+            <Label text="Number of guests:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="guestCountField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Rules &amp; Notes:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            <TextArea fx:id="rulesArea" editable="false" prefRowCount="3"
+                      GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+            <!-- Row 3: rooms -->
+            <Label text="Assigned Rooms:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <ListView fx:id="assignedRoomsList" prefHeight="200"
+                      GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <VBox spacing="8" GridPane.rowIndex="3" GridPane.columnIndex="2">
+                <Button text="➖ Remove Selected" onAction="#handleRemoveSelected"/>
+                <Button text="➕ Add Selected →" onAction="#handleAddSelected"/>
+                <Button text="⟳ Refresh Available" onAction="#handleRefreshAvailable"/>
+            </VBox>
+
+            <ListView fx:id="availableRoomsList" prefHeight="200"
+                      GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+
+            <!-- Row 4 -->
+            <Label text="Status:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="statusField" editable="false" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+            <Button text="Save Changes" onAction="#handleSave"/>
+            <Button text="Close" onAction="#handleClose"/>
+        </HBox>
+    </bottom>
+</BorderPane>

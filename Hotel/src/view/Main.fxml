@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController"
+            prefWidth="400" prefHeight="300">
+    <children>
+        <VBox spacing="20" alignment="CENTER" layoutX="50" layoutY="60" prefWidth="300">
+            <Label text="🏨 Welcome to Hotel System" style="-fx-font-size: 22px;" />
+            <Button text="Use Kiosk" onAction="#handleKiosk"/>
+            <Button text="Admin Login" onAction="#handleAdmin"/>
+        </VBox>
+    </children>
+</AnchorPane>

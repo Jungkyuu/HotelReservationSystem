@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminLoginController"
+            prefWidth="380" prefHeight="220">
+    <children>
+        <VBox spacing="12" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20"
+              AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="🔐 Admin Login" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <Button text="Login" onAction="#handleLogin"/>
+            <Label text="For authorized staff only." style="-fx-text-fill: gray;"/>
+        </VBox>
+    </children>
+</AnchorPane>

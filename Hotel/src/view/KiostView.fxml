@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.KioskController"
+            prefWidth="600" prefHeight="500">
+    <children>
+        <VBox spacing="15" alignment="CENTER" layoutX="50" layoutY="20" prefWidth="500">
+            <Label text="📲 Self-Service Kiosk" style="-fx-font-size: 24px;"/>
+
+            <Label text="Number of Guests:"/>
+            <TextField fx:id="guestCountField" promptText="e.g., 2"/>
+
+            <Label text="Check-in:"/>
+            <DatePicker fx:id="checkInPicker"/>
+
+            <Label text="Check-out:"/>
+            <DatePicker fx:id="checkOutPicker"/>
+
+            <Button text="Show Available Rooms" onAction="#handleShowRooms"/>
+
+            <ListView fx:id="roomListView" prefHeight="150"/>
+
+            <Button text="Book Selected Room" onAction="#handleBookRoom"/>
+        </VBox>
+    </children>
+</AnchorPane>

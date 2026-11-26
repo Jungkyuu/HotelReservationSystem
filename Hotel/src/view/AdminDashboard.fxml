@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminDashboardController"
+            prefWidth="520" prefHeight="280">
+    <children>
+        <VBox spacing="12" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20"
+              AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="🛎️ Admin Dashboard" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+            <HBox spacing="8">
+                <Button text="Search (Phone)" onAction="#handleSearchGuest"/>
+                <Button text="Generate Bill" onAction="#handleGenerateBill"/>
+                <Button text="Modify/Cancel" onAction="#handleModifyCancel"/>
+                <Button text="Check-out Guest" onAction="#handleCheckout"/>
+            </HBox>
+
+            <Separator/>
+
+            <HBox spacing="8">
+                <Button text="Logout" onAction="#handleLogout"/>
+            </HBox>
+
+            <Label fx:id="statusLabel" text="Ready."/>
+        </VBox>
+    </children>
+</AnchorPane>

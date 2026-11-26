@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.BookingController" prefWidth="500" prefHeight="600">
+    <children>
+        <VBox spacing="10" layoutX="50" layoutY="20" prefWidth="400">
+            <Label text="📝 Guest Reservation Form" style="-fx-font-size: 20px;"/>
+
+            <Label text="Name:"/>
+            <TextField fx:id="nameField" prefWidth="350"/>
+
+            <Label text="Phone Number:"/>
+            <TextField fx:id="phoneField" prefWidth="350"/>
+
+            <Label text="Email:"/>
+            <TextField fx:id="emailField" prefWidth="350"/>
+
+            <Label text="Address:"/>
+            <TextField fx:id="addressField" prefWidth="350"/>
+
+            <Label text="Number of Guests:"/>
+            <TextField fx:id="guestCountField" onKeyReleased="#handleShowRooms" prefWidth="350"/>
+
+            <Label text="Check-in Date (yyyy-mm-dd):"/>
+            <TextField fx:id="checkInField" prefWidth="350"/>
+
+            <Label text="Check-out Date (yyyy-mm-dd):"/>
+            <TextField fx:id="checkOutField" prefWidth="350"/>
+
+            <Label text="Select Room:"/>
+            <ComboBox fx:id="roomComboBox" prefWidth="350"/>
+
+            <Button text="Confirm Booking" onAction="#handleConfirmBooking" prefWidth="200"/>
+        </VBox>
+    </children>
+</AnchorPane>
